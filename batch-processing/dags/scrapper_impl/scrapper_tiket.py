@@ -5,10 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
-import sys
-from os.path import dirname, abspath
-
-sys.path.append(dirname(dirname(abspath(__file__))))
 
 from base.base_scrapper import BaseScrapper
 
@@ -58,8 +54,3 @@ class TiketScrapper(BaseScrapper):
         }
         df = pd.DataFrame(data)
         return df
-    
-# if __name__ == "__main__":
-#     sc = TiketScrapper('https://careers.tiket.com/jobs', 'h5', 'div', 'span')
-#     df = sc.scrape()
-#     print(df)

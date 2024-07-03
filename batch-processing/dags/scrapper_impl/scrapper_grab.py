@@ -1,10 +1,6 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import sys
-from os.path import dirname, abspath
-
-sys.path.append(dirname(dirname(abspath(__file__))))
 
 from base.base_scrapper import BaseScrapper
 
@@ -37,8 +33,3 @@ class GrabScrapper(BaseScrapper):
         }
         df = pd.DataFrame(data)
         return df
-
-# if __name__ == "__main__":
-#     sc = GrabScrapper('https://www.grab.careers/en/jobs/?orderby=0&pagesize=20&page=1&team=Engineering', 'a', 'ul', 'ul')
-#     df = sc.scrape()
-#     print(df)
