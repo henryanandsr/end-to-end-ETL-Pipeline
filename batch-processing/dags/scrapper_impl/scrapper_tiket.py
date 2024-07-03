@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 
-from base.base_scrapper import BaseScrapper
+from dags.base.base_scrapper import BaseScrapper
 
 class TiketScrapper(BaseScrapper):
     def __init__(self, url, title, location, tags):
@@ -18,9 +18,13 @@ class TiketScrapper(BaseScrapper):
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--remote-debugging-port=9222')
         
-        service = Service('/Users/henryanand/Downloads/chromedriver-mac-arm64 2/chromedriver')
-        driver = webdriver.Chrome(service=service, options=options)
+        # Connect to container
+        driver = webdriver.Remote(
+            command_executor='http://selenium:4444/wd/hub',
+            options=options
+        )
         driver.get(self.url)
 
         WebDriverWait(driver, 20).until(
