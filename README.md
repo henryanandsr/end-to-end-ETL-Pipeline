@@ -1,5 +1,7 @@
 # End to End ETL Pipeline
 
+Group 4 - Henry & Ghifari
+
 ## Batch Processing
 The primary objective of this project is to automate the extraction of job listings from various company job portals using web scraping techniques. The extracted data is then transformed and loaded into Google BigQuery for further analysis and reporting. 
 
