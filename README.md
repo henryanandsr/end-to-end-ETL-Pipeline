@@ -13,3 +13,16 @@ Process:
 ![batch-processing](/batch-processing/img/DAG1.png)
 ### DAG 2
 ![batch-processing](/batch-processing/img/DAG2.png)
+
+## Stream Processing
+The primary objective of this project is to automate the real-time extraction of news updates for specific companies using Apache Kafka for stream processing. The streamed data is then transformed and loaded into Google BigQuery
+
+Process:
+
+Data Extraction: The first step involves capturing real-time news updates for specific companies using Apache Kafka for stream processing.
+Data Transformation: Once extracted, the data is transformed into a structured format using Pandas.
+Data Loading: The transformed data is loaded into Google BigQuery, which serves as the storage layer.
+Data Consumption: Looker consumes the data from BigQuery for visualization and reporting.
+
+Video explanation for both batch and steam can be accessed through link below:
+https://www.youtube.com/watch?v=8UDtQCb3AEY
